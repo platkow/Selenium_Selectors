@@ -1,14 +1,12 @@
 package org.example.pages;
 
+import lombok.extern.java.Log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class GoogleImgResultsPage extends BasePage{
+@Log
+public class GoogleImgResultsPage extends BasePage {
     public GoogleImgResultsPage(WebDriver driver) {
         super(driver);
     }
@@ -16,10 +14,8 @@ public class GoogleImgResultsPage extends BasePage{
     @FindBy(css = "div.ICt2Q")
     private WebElement findImgSource;
 
-    public boolean elementIsDisplayed(){
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-//        wait.until(ExpectedConditions.visibilityOf(searchedImgTitle));
-//        return searchedImgTitle.getText().toString();
+    public boolean elementIsDisplayed() {
+        log.info("Verifying if element is displayed");
         return findImgSource.isDisplayed();
     }
 }

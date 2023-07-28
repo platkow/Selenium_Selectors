@@ -1,11 +1,12 @@
 package org.example.pages;
 
-import org.openqa.selenium.By;
+import lombok.extern.java.Log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class GoogleApsPage extends BasePage{
+@Log
+public class GoogleApsPage extends BasePage {
     public GoogleApsPage(WebDriver driver) {
         super(driver);
     }
@@ -13,7 +14,8 @@ public class GoogleApsPage extends BasePage{
     @FindBy(xpath = "//c-wiz//ul[@class='ngVsM u4RcUd'] //li[3] //a")
     private WebElement mapsLink;
 
-    public void navigateGoogleMaps(){
+    public void navigateGoogleMaps() {
+        log.info("Navigating to Google Maps");
         driver.switchTo().frame("app");
         click(mapsLink);
     }

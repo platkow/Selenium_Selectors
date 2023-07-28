@@ -1,11 +1,13 @@
 package org.example.pages;
 
+import lombok.extern.java.Log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+@Log
 public class NewsPage extends BasePage{
     public NewsPage(WebDriver driver) {
         super(driver);
@@ -21,20 +23,17 @@ public class NewsPage extends BasePage{
     private WebElement resultsStatusLabel;
 
     public int countResultsLinks(){
+        log.info("Counting results links");
         return resultsLinks.size();
     }
 
     public void navigateTenthPage(){
+        log.info("Navigating to tenth page");
         click(tenResultsPage);
     }
 
     public String getResultsStatus(){
+        log.info("Getting results status");
         return getText(resultsStatusLabel);
     }
-
-    //refactor
-    //dodaj loggery w metodach
-    //połącz wszystkie testy w jedną klasę
-    //przenieś tworzenie obiektó pagy do before all
-
 }

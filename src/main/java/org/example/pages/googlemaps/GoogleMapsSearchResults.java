@@ -1,12 +1,13 @@
 package org.example.pages.googlemaps;
 
+import lombok.extern.java.Log;
 import org.example.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+@Log
 public class GoogleMapsSearchResults extends BasePage {
     public GoogleMapsSearchResults(WebDriver driver) {
         super(driver);
@@ -16,7 +17,7 @@ public class GoogleMapsSearchResults extends BasePage {
     private WebElement plotRoute;
 
     public void clickPlotRute(){
-
+        log.info("Clicking Plot route");
         wait.until(ExpectedConditions.visibilityOf(plotRoute));
         click(plotRoute);
     }
